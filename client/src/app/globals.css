@@ -1,0 +1,112 @@
+/**
+ * Modern UI Theme – High Contrast & Sleek Palette
+ */
+@import "tailwindcss";
+
+:root {
+  --background: #0f0f0f;
+  --foreground: #ffffff;
+  --accent: #4ade80; /* green-400 */
+  --accent-light: #bbf7d0; /* green-200 */
+  --accent-bg: #1a1a1a;
+  --text-dark: #f3f4f6; /* gray-100 */
+  --text-light: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f9fafb; /* light gray */
+    --foreground: #1f2937; /* slate-800 */
+    --text-dark: #1f2937;
+    --text-light: #ffffff;
+    --accent: #4ade80;
+    --accent-light: #bbf7d0;
+    --accent-bg: #ffffff;
+  }
+}
+
+body {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--background);
+  transition: all 0.3s ease;
+}
+
+input,
+textarea,
+select,
+button {
+  background-color: #111827; /* slate-900 */
+  color: var(--text-light);
+  border: 2px solid var(--accent-light);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.3);
+}
+
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+  color: var(--text-dark);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.card,
+.notification,
+.shadow-xl,
+.rounded-3xl {
+  background-color: var(--accent-bg);
+  border-color: var(--accent-light);
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.card:hover,
+.notification:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+::placeholder {
+  color: #9ca3af; /* gray-400 */
+  opacity: 1;
+  font-style: italic;
+  transition: opacity 0.2s ease;
+}
+
+::-webkit-input-placeholder {
+  color: #9ca3af;
+}
+::-moz-placeholder {
+  color: #9ca3af;
+}
+:-ms-input-placeholder {
+  color: #9ca3af;
+}
